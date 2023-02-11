@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;700&display=swap');
+
+:root {
+    font-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #121318;
+    color: #bbb;
+    font-family: "Space Grotesk", monospace;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+.header {
+    gap: 0.75em;
+    width: 100%;
+    border-bottom: #bbb2 1px solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5em;
+}
+
+.header .clocks {
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 2.5em;
+}
+
+.header .search {
+    font-size: 1.25em;
+    width: 100%;
+    padding: 0.25em;
+    background: transparent;
+    border: none;
+    background: #9394a1;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 0.25em;
+    padding: 0.25em;
+    transition: 250ms;
+    border-bottom: #9394a100 3px solid;
+}
+
+
+.header .search:focus-within {
+    color: #dadadd;
+    border-bottom: #9394a1 3px solid;
+    background: #fff0;
+    border-radius: 0em;
+    outline: none;
+}
+
+.tasks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.tasks .title {
+    color: #bbba;
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+.tasks .container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    width: 100%;
+    padding: 0 0.5em;
+    /* grid-auto-flow: row dense;
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr); */
+}
+
+/* @media (max-width:900px) {
+    .tasks .container {
+        grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+    }
+}
+
+@media (max-width:580px) {
+    .tasks .container {
+        grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+    }
+} */
+
+.oddelovac {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.oddelovac .odd {
+    padding: 0;
+    width: 100%;
+    height: 1px;
+    background: #bbb2;
+    display: inline-block;
+}
+
+.tasks .container .task {
+    box-shadow: #0006 2px 2px 2px;
+    width: 300px;
+    max-width: 300px;
+    background: #eef1;
+}
+
+.tasks .container .task .head {
+    display: flex;
+    background: hsl(220,37%,48%);
+    color: #222;
+}
+
+.tasks .container .task .head .one {
+    padding: 0.5em;
+    width: 100%;
+}
+
+.tasks .container .task .head .two {
+    padding: 0.5em;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: centers;
+    color: #222;
+    cursor: pointer;
+    padding: 0 0.75em;
+    transition: 200ms;
+}
+
+
+.tasks .container .task .head .two:hover {
+    background: rgba(178, 34, 34, 0.286);
+    color: firebrick;
+}
+
+
+
+.green .container .task .head {
+    padding: 0.5em;
+    background: hsl(120,37%,48%);
+    color: #222;
+}
+
+.green .container .task .head {
+    padding: 0.5em;
+    background: hsl(120,37%,48%);
+    color: #222;
+}
+
+.green .container {
+    cursor: pointer;
+}
+
+
+.tasks .container .task .content {
+    padding: 0.5em;
+    background: #222;
+}
+
+
+.rightmenu {
+    position: absolute;
+    background: #bbb;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0.75em;
+    gap: 0.25em;
+}
+
+.rightmenu button{
+    font-size: 1em;
+    padding: 0.5em;
+    background: #2226;
+    color: #c5c5c5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rightmenu .remove{
+    font-size: 1em;
+    padding: 0.5em;
+    background: hsl(0, 37%, 48%);
+    color: rgba(255, 177, 177, 0.857);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.addtask-wrap {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.addtask-cont {
+    opacity: 40%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    display: flex;
+    max-width: 600px;
+    font-size: 1.5em;
+    padding: 0.25em;
+    flex-direction: row ;
+    background: #222;
+    gap: 8px;
+    transition: 250ms;
+}
+
+.addtask-cont button {
+    font-size: 1em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    background: hsl(120, 37%, 48%);
+    color: #8dff8d; 
+}
+.addtask-cont input {
+    width: 100%;
+    font-size: 0.8em;
+    background: transparent;
+    border: none;
+    border-bottom: hsla(120, 37%, 48%, 0.154) 3px solid;
+    transition: 200ms;
+    color: white;
+    padding: 0em 0.25em;
+}
+
+.addtask-cont input:focus-within {
+    outline: none;
+    border-bottom: hsl(120, 37%, 48%) 3px solid;
+}
+
+.addtask-cont:focus-within {
+    opacity: 100%;
+}
+
+
